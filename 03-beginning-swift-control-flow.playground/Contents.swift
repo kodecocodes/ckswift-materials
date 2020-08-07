@@ -73,7 +73,7 @@ for _ in 1...3 {
 
 print("\nWhere Clause")
 
-for i in 1...10 where i % 2 == 1 {
+for i in 1...10 where i.isMultiple(of: 2) {
   print("\(i) is an odd number.")
 }
 
@@ -81,7 +81,35 @@ print("\nIterating Over Arrays")
 
 let daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 for day in daysOfTheWeek {
-  print(day, terminator: " ")
+  print(day)
+}
+
+// More functional alternative
+daysOfTheWeek.forEach { print($0) }
+
+// Alternative ways to iterate an array, from very manual -> algorithmic
+for i in 0 ..< daysOfTheWeek.count {
+  print("Day \(i): \(daysOfTheWeek[i])")
+}
+
+for i in daysOfTheWeek.indices {
+  print("Day \(i): \(daysOfTheWeek[i])")
+}
+
+for day in daysOfTheWeek {
+  if let i = daysOfTheWeek.lastIndex(of: day) {
+    print("Day \(i): \(day)")
+  }
+}
+
+i = 0
+for day in daysOfTheWeek {
+  print("Day \(i): \(day)")
+  i += 1
+}
+
+for (i, day) in daysOfTheWeek.enumerated() {
+  print("Day \(i): \(day)")
 }
 
 print("\nIterating Over Dictionaries")
