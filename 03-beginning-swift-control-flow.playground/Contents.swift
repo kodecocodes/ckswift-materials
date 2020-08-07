@@ -73,7 +73,7 @@ for _ in 1...3 {
 
 print("\nWhere Clause")
 
-for i in 1...10 where i.isMultiple(of: 2) {
+for i in 1...10 where !i.isMultiple(of: 2) {
   print("\(i) is an odd number.")
 }
 
