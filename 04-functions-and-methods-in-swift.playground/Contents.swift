@@ -82,7 +82,9 @@ for i in 1...100 {
 // rather than mutating the value
 
 /// Rotate an xy-point around an arbitrary center point by an angle measured in radians.
-func rotatedPoint(_ point: CGPoint, by radians: CGFloat, about center: CGPoint = .zero) -> CGPoint {
+func rotatedPoint(_ point: CGPoint,
+                  by radians: CGFloat,
+                  about center: CGPoint = .zero) -> CGPoint {
 
   // don't worry so much about the implementation
 
